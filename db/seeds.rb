@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# clears db before reseeding
+User.destroy_all
+Room.destroy_all
+Storage.destroy_all
+Item.destroy_all
+
 # User data
 user1 = User.create(name: "Anthony")
 # Room Data
