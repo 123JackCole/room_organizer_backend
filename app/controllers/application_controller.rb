@@ -1,4 +1,4 @@
-class Api::V1::ApplicationController < ActionController::API
+class ApplicationController < ActionController::API
 
     before_action :authorized
     helper_method :login_user, :current_user, :logged_in?
