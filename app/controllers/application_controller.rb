@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
 
     before_action :authorized
-    helper_method :login_user, :current_user, :logged_in?
+    # helper_method :login_user, :current_user, :logged_in?
 
     def login_user(user)
         session[:user_id] = user.id
