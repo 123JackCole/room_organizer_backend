@@ -17,7 +17,7 @@ class Api::V1::SessionsController < ApplicationController
     def destroy
         session.delete(:user_id)
         flash[:notice] = "Log Out Sucessful"
-        redirect_to login_path
+        #redirect_to login_path
     end
 
 end
