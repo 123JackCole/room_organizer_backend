@@ -3,7 +3,7 @@ class Api::V1::StoragesController < ApplicationController
     
     def index
         @storages = Storage.all
-        render json: {storage: storage}
+        render json: {storage: @storages}, each_serializer: StorageSerializer
     end
 
     def show
