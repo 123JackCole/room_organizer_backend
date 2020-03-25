@@ -2,7 +2,7 @@ class Api::V1::RoomsController < ApplicationController
     
     def index
         rooms = Room.all
-        render json: {room: room}
+        render json: rooms
     end
 
     def show

@@ -2,7 +2,7 @@ class Api::V1::ItemsController < ApplicationController
     
     def index
         items = Item.all
-        render json: {item: items}, each_serializer: TtemSerializer
+        render json: {item: items}, each_serializer: ItemSerializer
     end
 
     def show
@@ -34,7 +34,7 @@ class Api::V1::ItemsController < ApplicationController
 
     private
 
-    def user_params
+    def item_params
         params.require(:item).permit(:name, :category, :photo, :description, :storage_id, :quantity)
     end
 

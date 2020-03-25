@@ -35,7 +35,7 @@ class Api::V1::StoragesController < ApplicationController
     private
 
     def storage_params
-        params.require(:storage).permit(:user_id, :name, :size, :photo)
+        params.require(:storage).permit(:size, :photo, :name, :room_id)
     end
     
 end
