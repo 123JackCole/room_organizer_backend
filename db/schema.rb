@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2020_03_24_190622) do
   end
 
   create_table "storages", force: :cascade do |t|
+    t.string "name"
     t.string "size"
     t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
     t.integer "room_id"
   end
 
