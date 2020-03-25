@@ -30,7 +30,6 @@ class Api::V1::RoomsController < ApplicationController
         user = current_user
         session.delete(:room_id)
         room.destroy
-       
     end
 
     private
