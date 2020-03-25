@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
 
-    before_action :authorized
+    # before_action :authorized
     # helper_method :login_user, :current_user, :logged_in?
 
     def login_user(user)
@@ -15,10 +15,10 @@ class ApplicationController < ActionController::API
         !!current_user
     end
 
-    def authorized
-        unless logged_in?
-            flash[:notice] = "You must be logged in to see this page"
-            redirect_to login_path
-        end
-    end
+    # def authorized
+    #     unless logged_in?
+    #         flash[:notice] = "You must be logged in to see this page"
+    #         redirect_to login_path
+    #     end
+    # end
 end
