@@ -12,10 +12,12 @@ class Api::V1::ItemsController < ApplicationController
 
     def new
         item = Item.new
+        render json: item 
     end
 
     def create
         item = Item.create(item_params)
+        render json: item
     end
 
     def edit
@@ -34,7 +36,7 @@ class Api::V1::ItemsController < ApplicationController
 
     private
 
-    def user_params
+    def item_params
         params.require(:item).permit(:name, :category, :photo, :description, :storage_id, :quantity)
     end
 

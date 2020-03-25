@@ -12,10 +12,12 @@ class Api::V1::StoragesController < ApplicationController
 
     def new
         storage = Storage.new
+        render json: storage 
     end
 
     def create
         storage = Storage.create(storage_params)
+        render json: storage 
     end
 
     def edit
@@ -34,7 +36,7 @@ class Api::V1::StoragesController < ApplicationController
     private
 
     def storage_params
-        params.require(:storage).permit(:user_id, :name, :size, :photo)
+        params.require(:storage).permit(:size, :photo, :name, :room_id)
     end
     
 end
