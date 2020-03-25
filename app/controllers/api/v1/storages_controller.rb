@@ -2,7 +2,7 @@ class Api::V1::StoragesController < ApplicationController
      
     def index
         storages = Storage.all
-        render json: {storage: storages}, each_serializer: StorageSerializer
+        render json: storages
     end
 
     def show
@@ -29,7 +29,6 @@ class Api::V1::StoragesController < ApplicationController
     def destroy
         session.delete(:storage_id)
         storage.destroy
-       
     end
 
     private
