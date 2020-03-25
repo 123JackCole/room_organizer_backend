@@ -12,10 +12,12 @@ class Api::V1::ItemsController < ApplicationController
 
     def new
         item = Item.new
+        render json: item 
     end
 
     def create
         item = Item.create(item_params)
+        render json: item
     end
 
     def edit

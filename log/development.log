@@ -1477,3 +1477,55 @@ ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
   
 app/controllers/api/v1/users_controller.rb:11:in `show'
 >>>>>>> 60dca6436701bd02081f2ee255ed8b1e96469f1d
+Started POST "/api/v1/items" for ::1 at 2020-03-25 14:22:55 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::ItemsController#create as */*
+  Parameters: {"name"=>"spoon", "category"=>"kitchen supplies", "quantity"=>5, "storage_id"=>1, "photo"=>"nil", "description"=>"little and big spoons", "item"=>{"name"=>"spoon", "category"=>"kitchen supplies", "quantity"=>5, "description"=>"little and big spoons", "photo"=>"nil", "storage_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/items_controller.rb:18:in `create'
+  [1m[36mStorage Load (0.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:18:in `create'
+  [1m[36mItem Create (2.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "spoon"], ["category", "kitchen supplies"], ["quantity", 5], ["description", "little and big spoons"], ["photo", "nil"], ["created_at", "2020-03-25 21:22:56.250963"], ["updated_at", "2020-03-25 21:22:56.250963"], ["storage_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:18:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/items_controller.rb:18:in `create'
+Completed 204 No Content in 114ms (ActiveRecord: 25.1ms | Allocations: 16228)
+
+
+Started POST "/api/v1/items" for ::1 at 2020-03-25 14:30:32 -0700
+Processing by Api::V1::ItemsController#create as */*
+  Parameters: {"name"=>"knife", "category"=>"kitchen supplies", "quantity"=>5, "storage_id"=>1, "photo"=>"nil", "description"=>"good for cutting steak. not good for cutting fingers.", "item"=>{"name"=>"knife", "category"=>"kitchen supplies", "quantity"=>5, "description"=>"good for cutting steak. not good for cutting fingers.", "photo"=>"nil", "storage_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/items_controller.rb:19:in `create'
+  [1m[36mStorage Load (0.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:19:in `create'
+  [1m[36mItem Create (1.1ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "knife"], ["category", "kitchen supplies"], ["quantity", 5], ["description", "good for cutting steak. not good for cutting fingers."], ["photo", "nil"], ["created_at", "2020-03-25 21:30:32.915523"], ["updated_at", "2020-03-25 21:30:32.915523"], ["storage_id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:19:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/items_controller.rb:19:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers] Rendered ItemSerializer with ActiveModelSerializers::Adapter::Attributes (0.77ms)
+Completed 200 OK in 139ms (Views: 32.4ms | ActiveRecord: 13.3ms | Allocations: 17820)
+
+
+Started POST "/api/v1/rooms" for ::1 at 2020-03-25 14:31:54 -0700
+Processing by Api::V1::RoomsController#create as */*
+  Parameters: {"name"=>"Bathroom", "user_id"=>3, "room"=>{"name"=>"Bathroom", "user_id"=>3}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:19:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:19:in `create'
+  [1m[36mRoom Create (0.7ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bathroom"], ["created_at", "2020-03-25 21:31:54.901887"], ["updated_at", "2020-03-25 21:31:54.901887"], ["user_id", 3]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:19:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:19:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+[active_model_serializers]   [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:20:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (28.14ms)
+Completed 200 OK in 113ms (Views: 28.6ms | ActiveRecord: 25.5ms | Allocations: 15535)
+
+
