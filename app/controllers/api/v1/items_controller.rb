@@ -2,7 +2,7 @@ class Api::V1::ItemsController < ApplicationController
     
     def index
         items = Item.all
-        render json: {item: items}, each_serializer: ItemSerializer
+        render json: items
     end
 
     def show

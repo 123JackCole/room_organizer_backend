@@ -1372,6 +1372,7 @@ Processing by Api::V1::RoomsController#create as */*
 Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 132)
 
 
+<<<<<<< HEAD
   
 ActionController::ParameterMissing (param is missing or the value is empty: room):
   
@@ -1461,3 +1462,18 @@ puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
 puma (4.3.3) lib/puma/server.rb:472:in `process_client'
 puma (4.3.3) lib/puma/server.rb:328:in `block in run'
 puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+=======
+Started GET "/api/v1/users/1" for ::1 at 2020-03-25 14:12:47 -0700
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (14.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+Completed 404 Not Found in 131ms (ActiveRecord: 83.0ms | Allocations: 3649)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/api/v1/users_controller.rb:11:in `show'
+>>>>>>> 60dca6436701bd02081f2ee255ed8b1e96469f1d
