@@ -29,9 +29,8 @@ class Api::V1::RoomsController < ApplicationController
     end
 
     def destroy
-        user = current_user
-        session.delete(:room_id)
         room.destroy
+        render json: {message: "Room successfully deleted"}
     end
 
     private
