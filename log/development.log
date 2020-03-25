@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Started GET "/api/v1/storages/1" for ::1 at 2020-03-24 18:52:37 -0700
   [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by Api::V1::StoragesController#show as */*
@@ -60,6 +61,21 @@ app/controllers/api/v1/rooms_controller.rb:5:in `index'
 Started GET "/api/v1/room" for ::1 at 2020-03-24 18:53:15 -0700
   
 ActionController::RoutingError (No route matches [GET] "/api/v1/room"):
+=======
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anthony"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anthony"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anthony"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/users" for ::1 at 2020-03-24 19:18:49 -0700
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+>>>>>>> ffd92ada457a191b5a0bdb14879ad383e5a7fd77
   
 actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
@@ -85,6 +101,7 @@ puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
 puma (4.3.3) lib/puma/server.rb:472:in `process_client'
 puma (4.3.3) lib/puma/server.rb:328:in `block in run'
 puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/api/v1/rooms" for ::1 at 2020-03-24 18:53:18 -0700
 Processing by Api::V1::RoomsController#index as */*
   Parameters: {"room"=>{}}
@@ -165,6 +182,18 @@ Completed 200 OK in 240ms (Views: 123.1ms | ActiveRecord: 43.5ms | Allocations: 
 Started GET "/api/v1/user" for ::1 at 2020-03-24 18:56:55 -0700
   
 ActionController::RoutingError (No route matches [GET] "/api/v1/user"):
+=======
+Started GET "/" for ::1 at 2020-03-24 19:18:54 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Jack/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Jack/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.8ms | Allocations: 196)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 871)
+
+
+Started GET "/users" for ::1 at 2020-03-24 19:19:15 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+>>>>>>> ffd92ada457a191b5a0bdb14879ad383e5a7fd77
   
 actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
 actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
@@ -190,6 +219,7 @@ puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
 puma (4.3.3) lib/puma/server.rb:472:in `process_client'
 puma (4.3.3) lib/puma/server.rb:328:in `block in run'
 puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/api/v1/users" for ::1 at 2020-03-24 18:56:59 -0700
 Processing by Api::V1::UsersController#index as */*
   Parameters: {"user"=>{}}
@@ -851,5 +881,583 @@ Processing by Api::V1::StoragesController#index as */*
 [active_model_serializers]   ↳ app/controllers/api/v1/storages_controller.rb:5:in `index'
 [active_model_serializers] Rendered StorageSerializer with Hash (5.98ms)
 Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.9ms | Allocations: 2345)
+=======
+Started GET "/api/v1/users" for ::1 at 2020-03-24 19:19:35 -0700
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (92.8ms)
+Completed 200 OK in 202ms (Views: 158.7ms | ActiveRecord: 27.4ms | Allocations: 18809)
 
 
+Started GET "/api/v1/rooms" for ::1 at 2020-03-24 19:19:51 -0700
+Processing by Api::V1::RoomsController#index as */*
+Completed 500 Internal Server Error in 343ms (ActiveRecord: 0.0ms | Allocations: 71229)
+
+
+  
+NameError (undefined local variable or method `room' for #<Api::V1::RoomsController:0x00007fe5b4dc7908>
+Did you mean?  rooms):
+  
+app/controllers/api/v1/rooms_controller.rb:5:in `index'
+Started GET "/api/v1/rooms" for ::1 at 2020-03-24 19:20:27 -0700
+Processing by Api::V1::RoomsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (1.8ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (72.05ms)
+Completed 200 OK in 160ms (Views: 116.3ms | ActiveRecord: 27.0ms | Allocations: 15724)
+
+
+Started GET "/api/v1/rooms" for ::1 at 2020-03-24 19:25:06 -0700
+Processing by Api::V1::RoomsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.6ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.29ms)
+Completed 200 OK in 104ms (Views: 69.7ms | ActiveRecord: 25.9ms | Allocations: 15586)
+
+
+Started GET "/api/v1/rooms" for ::1 at 2020-03-24 19:25:09 -0700
+Processing by Api::V1::RoomsController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.59ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 2.2ms | Allocations: 4648)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Destroy (0.5ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Destroy (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStorage Load (2.0ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anthony"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anthony"], ["created_at", "2020-03-25 02:25:19.367511"], ["updated_at", "2020-03-25 02:25:19.367511"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.7ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Living Room"], ["created_at", "2020-03-25 02:25:19.388851"], ["updated_at", "2020-03-25 02:25:19.388851"], ["user_id", 3]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.9ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bedroom"], ["created_at", "2020-03-25 02:25:19.410466"], ["updated_at", "2020-03-25 02:25:19.410466"], ["user_id", 3]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/v1/rooms" for ::1 at 2020-03-24 19:25:22 -0700
+Processing by Api::V1::RoomsController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mRoom Load (3.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 5]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.84ms)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 5.9ms | Allocations: 4652)
+
+
+Started GET "/api/v1/users" for ::1 at 2020-03-24 19:25:43 -0700
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mRoom Load (1.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.32ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 2.8ms | Allocations: 3034)
+
+
+Started GET "/api/v1/users" for ::1 at 2020-03-24 19:38:02 -0700
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.18ms)
+Completed 200 OK in 43ms (Views: 31.2ms | ActiveRecord: 2.0ms | Allocations: 11548)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Destroy (0.8ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Destroy (0.5ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = $1[0m  [["id", 6]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStorage Load (0.8ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anthony"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anthony"], ["created_at", "2020-03-25 02:38:12.234203"], ["updated_at", "2020-03-25 02:38:12.234203"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Living Room"], ["created_at", "2020-03-25 02:38:12.257815"], ["updated_at", "2020-03-25 02:38:12.257815"], ["user_id", 4]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.5ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bedroom"], ["created_at", "2020-03-25 02:38:12.267594"], ["updated_at", "2020-03-25 02:38:12.267594"], ["user_id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mStorage Create (3.1ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "medium"], ["photo", "nil"], ["created_at", "2020-03-25 02:38:12.296194"], ["updated_at", "2020-03-25 02:38:12.296194"], ["name", "Coffee Table"], ["room_id", 7]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "medium"], ["photo", "nil"], ["created_at", "2020-03-25 02:38:12.308679"], ["updated_at", "2020-03-25 02:38:12.308679"], ["name", "Bookshelf"], ["room_id", 7]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "large"], ["photo", "nil"], ["created_at", "2020-03-25 02:38:12.317710"], ["updated_at", "2020-03-25 02:38:12.317710"], ["name", "Chest of Drawers"], ["room_id", 8]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "large"], ["photo", "nil"], ["created_at", "2020-03-25 02:38:12.326088"], ["updated_at", "2020-03-25 02:38:12.326088"], ["name", "Nightstand"], ["room_id", 8]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/api/v1/storages" for ::1 at 2020-03-24 19:38:19 -0700
+Processing by Api::V1::StoragesController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mStorage Load (1.1ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mRoom Load (1.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.6ms)
+Completed 200 OK in 89ms (Views: 59.6ms | ActiveRecord: 24.3ms | Allocations: 14715)
+
+
+Started GET "/api/v1/storages" for ::1 at 2020-03-24 19:39:33 -0700
+Processing by Api::V1::StoragesController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mStorage Load (1.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (60.58ms)
+Completed 200 OK in 116ms (Views: 78.5ms | ActiveRecord: 29.0ms | Allocations: 21192)
+
+
+Started GET "/api/v1/users" for ::1 at 2020-03-24 19:39:37 -0700
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/serializers/user_serializer.rb:5:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.55ms)
+Completed 200 OK in 27ms (Views: 18.1ms | ActiveRecord: 7.9ms | Allocations: 5191)
+
+
+Started GET "/api/v1/rooms" for ::1 at 2020-03-24 19:39:43 -0700
+Processing by Api::V1::RoomsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.8ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 8]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.5ms)
+Completed 200 OK in 32ms (Views: 29.0ms | ActiveRecord: 2.9ms | Allocations: 5604)
+
+
+Started GET "/api/v1/storages" for ::1 at 2020-03-24 19:40:15 -0700
+Processing by Api::V1::StoragesController#index as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mStorage Load (0.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.56ms)
+Completed 200 OK in 47ms (Views: 39.1ms | ActiveRecord: 6.6ms | Allocations: 7800)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Destroy (0.5ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Destroy (0.4ms)[0m  [1m[31mDELETE FROM "rooms" WHERE "rooms"."id" = $1[0m  [["id", 8]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mStorage Load (0.7ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "storages" WHERE "storages"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "storages" WHERE "storages"."id" = $1[0m  [["id", 2]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "storages" WHERE "storages"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "storages" WHERE "storages"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "Anthony"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Anthony"], ["created_at", "2020-03-25 02:40:33.563360"], ["updated_at", "2020-03-25 02:40:33.563360"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Living Room"], ["created_at", "2020-03-25 02:40:33.585697"], ["updated_at", "2020-03-25 02:40:33.585697"], ["user_id", 5]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.5ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bedroom"], ["created_at", "2020-03-25 02:40:33.593459"], ["updated_at", "2020-03-25 02:40:33.593459"], ["user_id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "medium"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.601974"], ["updated_at", "2020-03-25 02:40:33.601974"], ["name", "Coffee Table"], ["room_id", 9]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "medium"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.611740"], ["updated_at", "2020-03-25 02:40:33.611740"], ["name", "Bookshelf"], ["room_id", 9]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "large"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.628985"], ["updated_at", "2020-03-25 02:40:33.628985"], ["name", "Chest of Drawers"], ["room_id", 10]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mStorage Create (0.5ms)[0m  [1m[32mINSERT INTO "storages" ("size", "photo", "created_at", "updated_at", "name", "room_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["size", "large"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.646108"], ["updated_at", "2020-03-25 02:40:33.646108"], ["name", "Nightstand"], ["room_id", 10]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Create (2.2ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Address Book"], ["category", "Office Supplies"], ["quantity", 0], ["description", "nil"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.704301"], ["updated_at", "2020-03-25 02:40:33.704301"], ["storage_id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Cell Phone Charger"], ["category", "Electronics"], ["quantity", 0], ["description", "Old cellphone charger for Nokia 500."], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.749332"], ["updated_at", "2020-03-25 02:40:33.749332"], ["storage_id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Extra House Key"], ["category", "Keys"], ["quantity", 0], ["description", "Second set of house keys for front and back door."], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.759630"], ["updated_at", "2020-03-25 02:40:33.759630"], ["storage_id", 5]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Diary"], ["category", "Other"], ["quantity", 0], ["description", "Personal Dairy."], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.768804"], ["updated_at", "2020-03-25 02:40:33.768804"], ["storage_id", 7]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "iPad"], ["category", "Electronics"], ["quantity", 0], ["description", "2019 iPad Pro serial number:2N3UOFN083"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.794309"], ["updated_at", "2020-03-25 02:40:33.794309"], ["storage_id", 8]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Headphones"], ["category", "Electronics"], ["quantity", 0], ["description", "Beats by Dre"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.802111"], ["updated_at", "2020-03-25 02:40:33.802111"], ["storage_id", 8]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("name", "category", "quantity", "description", "photo", "created_at", "updated_at", "storage_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Favorite Pen"], ["category", "Office Supplies"], ["quantity", 0], ["description", "Deluxe uni-ball fine point"], ["photo", "nil"], ["created_at", "2020-03-25 02:40:33.810179"], ["updated_at", "2020-03-25 02:40:33.810179"], ["storage_id", 8]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/storages" for ::1 at 2020-03-24 19:40:36 -0700
+Processing by Api::V1::StoragesController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 5]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 6]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 7]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 8]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (43.48ms)
+Completed 200 OK in 51ms (Views: 42.3ms | ActiveRecord: 8.3ms | Allocations: 13514)
+>>>>>>> ffd92ada457a191b5a0bdb14879ad383e5a7fd77
+
+
+Started GET "/api/v1/storages" for ::1 at 2020-03-24 19:48:59 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::StoragesController#index as */*
+  Parameters: {"storage"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mStorage Load (0.8ms)[0m  [1m[34mSELECT "storages".* FROM "storages"[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE Room Load (0.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (103.81ms)
+Completed 200 OK in 148ms (Views: 116.9ms | ActiveRecord: 35.8ms | Allocations: 29148)
+
+
+Started GET "/api/v1/rooms" for ::1 at 2020-03-25 09:02:05 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoomsController#index as */*
+  Parameters: {"room"=>{}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `current_user'
+  [1m[36mRoom Load (2.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:10:in `map'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (72.06ms)
+Completed 200 OK in 122ms (Views: 91.6ms | ActiveRecord: 39.8ms | Allocations: 21029)
+
+
+Started POST "/api/v1/rooms" for ::1 at 2020-03-25 09:02:10 -0700
+Processing by Api::V1::RoomsController#create as */*
+  Parameters: {"room"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 132)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: room):
+  
+app/controllers/api/v1/rooms_controller.rb:38:in `room_params'
+app/controllers/api/v1/rooms_controller.rb:18:in `create'
+Started PUT "/api/v1/rooms" for ::1 at 2020-03-25 09:02:32 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/rooms"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/api/v1/storage" for ::1 at 2020-03-25 09:27:37 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/storage"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PUT "/api/v1/storage" for ::1 at 2020-03-25 09:27:39 -0700
+  
+ActionController::RoutingError (No route matches [PUT] "/api/v1/storage"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
