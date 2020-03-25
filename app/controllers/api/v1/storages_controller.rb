@@ -20,7 +20,7 @@ class Api::V1::StoragesController < ApplicationController
     end
 
     def edit
-        stroage = Storage.find(params[:id])
+        storage = Storage.find(params[:id])
     end
 
     def update
