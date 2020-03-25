@@ -6,30 +6,30 @@ class Api::V1::RoomsController < ApplicationController
     end
 
     def show
-        rooms = Room.find(params[:id])
+        room = Room.find(params[:id])
         render json: room
     end
 
     def new
-        rooms = Room.new
+        room = Room.new
     end
 
     def create
-        rooms = Room.create(room_params)
+        room = Room.create(room_params)
     end
 
     def edit
-        rooms = Room.find(params[:id])
+        room = Room.find(params[:id])
     end
 
     def update
-        rooms = Room.find(params[:id])
+        room = Room.find(params[:id])
     end
 
     def destroy
         user = current_user
         session.delete(:room_id)
-        rooms.destroy
+        room.destroy
        
     end
 
