@@ -27,7 +27,7 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def destroy
-        @user = current_user
+        user = current_user
         session.delete(:item_id)
         item.destroy
     end
