@@ -28,9 +28,8 @@ class Api::V1::StoragesController < ApplicationController
     end
 
     def destroy
-        @user = current_user
         session.delete(:storage_id)
-        @storage.destroy
+        storage.destroy
        
     end
 
