@@ -27,14 +27,13 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def destroy
-        user = current_user
-        session.delete(:item_id)
         item.destroy
+        render json: {message: "Item successfully deleted"}
     end
 
     private
 
-    def user_params
+    def item_params
         params.require(:item).permit(:name, :category, :photo, :description, :storage_id, :quantity)
     end
 

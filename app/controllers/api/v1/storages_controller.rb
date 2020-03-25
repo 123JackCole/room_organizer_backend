@@ -27,8 +27,8 @@ class Api::V1::StoragesController < ApplicationController
     end
 
     def destroy
-        session.delete(:storage_id)
         storage.destroy
+        render json: {message: "Storage successfully deleted"}
     end
 
     private
