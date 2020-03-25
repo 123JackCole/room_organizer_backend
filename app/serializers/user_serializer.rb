@@ -4,7 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   def rooms
     self.object.rooms.map do |room|
       {name: room.name}
-    end 
-  end 
+    end
+  end
 
 end

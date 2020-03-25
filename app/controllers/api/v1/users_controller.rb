@@ -1,58 +1,55 @@
 class Api::V1::UsersController < ApplicationController
 
-    skip_before_action :authorized, only: [:new, :create]
+    # skip_before_action :authorized, only: [:new, :create]
     
     def index
         users = User.all
-        render json: {users: users}
+        render json: users #{users: users}
     end
 
     def show
-        @user = User.find(params[:id])
+        user = User.find(params[:id])
         render json: user
     end
 
     def new
-        @user = User.new
+        user = User.new
     end
 
     def create
-        @user = User.create(user_params)
-        Cart.create(user_id:@user.id)
-        if @user.valid?
-            redirect_to @user
+        user = User.create(user_params)
+        if user.valid?
+            render json: user
         else 
-            flash[:notice] = @user.errors.full_messages
-            render :new
+            render json: {message: user.errors.full_messages}
         end
     end
 
     def edit
-        @user = User.find(params[:id])
+        user = User.find(params[:id])
     end
 
     def update
-        @user = User.find(params[:id])
-        if @user.valid?
-            @user.update(plant_params)
-            redirect_to @user
+        user = User.find(params[:id])
+        if user.valid?
+            user.update(user_params)
+            render json: user
         else
-            flash[:notice] = user.errors.full_messages
-            render :edit
+            render json: {message: user.errors.full_messages}
         end
     end
 
     def destroy
-        @user = current_user
+        user = current_user
         session.delete(:user_id)
-        @user.destroy
-        redirect_to :root
+        user.destroy
+        render json: {message: "User successfully deleted"}
     end
 
     private
 
     def user_params
-        params.require(:user).permit(:username)
+        params.require(:user).permit(:name)
     end
 
 end

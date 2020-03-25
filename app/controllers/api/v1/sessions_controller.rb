@@ -4,20 +4,18 @@ class Api::V1::SessionsController < ApplicationController
     end
  
     def create
-        @user = User.find_by(username: params[:username])
-        if @user
-            login_user(@user)
-            redirect_to @user
+        user = User.find_by(username: params[:username])
+        if user
+            login_user(user)
+            render json: user
         else
-            flash[:notice] = "Username does not exist"
-            redirect_to login_path
+            render json: {message: user.errors.full_messages}
         end
     end
 
     def destroy
         session.delete(:user_id)
-        flash[:notice] = "Log Out Sucessful"
-        #redirect_to login_path
+        render json: {message: "Log out successful"}
     end
 
 end

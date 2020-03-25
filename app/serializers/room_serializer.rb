@@ -4,7 +4,7 @@ class RoomSerializer < ActiveModel::Serializer
   def user
     {user_id: self.object.user.id, 
      user_name: self.object.user.name}
-  end 
+  end
 
   def storages
     self.object.storages.map do |storage|
