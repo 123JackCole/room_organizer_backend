@@ -7,11 +7,13 @@ class RoomSerializer < ActiveModel::Serializer
   end
 
   def storages
-    self.object.storages.map do |storage|
-      {name: storage.name,
-      size: storage.size,
-      photo: storage.photo}
-    end
+    # self.object.storages.map do |storage|
+    #   {name: storage.name,
+    #   size: storage.size,
+    #   photo: storage.photo}
+    # end
+
+    ActiveModel::SerializableResource.new(self.object.storages,  each_serializer: StorageSerializer)
   end
 
 end

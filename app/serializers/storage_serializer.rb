@@ -7,13 +7,15 @@ class StorageSerializer < ActiveModel::Serializer
   end 
 
   def items
-    self.object.items.map do |item|
-      {name: item.name,
-      category: item.category,
-      quantity: item.quantity,
-      description: item.description,
-      photo: item.photo}
-    end 
+    # self.object.items.map do |item|
+    #   {name: item.name,
+    #   category: item.category,
+    #   quantity: item.quantity,
+    #   description: item.description,
+    #   photo: item.photo}
+    # end 
+
+    ActiveModel::SerializableResource.new(self.object.items,  each_serializer: ItemSerializer)
   end 
   
 end
