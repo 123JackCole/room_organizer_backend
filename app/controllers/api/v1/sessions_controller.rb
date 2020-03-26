@@ -6,7 +6,6 @@ class Api::V1::SessionsController < ApplicationController
     def create
         user = User.find_by(username: params[:username])
         if user
-            login_user(user)
             render json: user
         else
             render json: {message: user.errors.full_messages}

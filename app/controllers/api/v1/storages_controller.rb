@@ -22,15 +22,18 @@ class Api::V1::StoragesController < ApplicationController
 
     def edit
         storage = Storage.find(params[:id])
+        render json: storage 
     end
 
     def update
         storage = Storage.find(params[:id])
+        render json: storage 
     end
 
     def destroy
-        session.delete(:storage_id)
+        storage = Storage.find(params[:id])
         storage.destroy
+        render json: {message: "Storage successfully deleted"} 
     end
 
     private

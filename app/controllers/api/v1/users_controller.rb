@@ -40,8 +40,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def destroy
-        user = current_user
-        session.delete(:user_id)
+        user = User.find(params[:id])
         user.destroy
         render json: {message: "User successfully deleted"}
     end

@@ -22,16 +22,18 @@ class Api::V1::RoomsController < ApplicationController
 
     def edit
         room = Room.find(params[:id])
+        render json: room
     end
 
     def update
         room = Room.find(params[:id])
+        render json: room
     end
 
     def destroy
-        user = current_user
-        session.delete(:room_id)
+        room = Room.find(params[:id])
         room.destroy
+        render json: {message: "Room successfully deleted"}
     end
 
     private

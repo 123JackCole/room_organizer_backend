@@ -22,16 +22,18 @@ class Api::V1::ItemsController < ApplicationController
 
     def edit
         item = Item.find(params[:id])
+        render json: item
     end
 
     def update
         item = Item.find(params[:id])
+        render json: item
     end
 
     def destroy
-        @user = current_user
-        session.delete(:item_id)
+        item = Item.find(params[:id])
         item.destroy
+        render json: {message: "Item successfully deleted"}
     end
 
     private
