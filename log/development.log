@@ -1529,3 +1529,606 @@ Processing by Api::V1::RoomsController#create as */*
 Completed 200 OK in 113ms (Views: 28.6ms | ActiveRecord: 25.5ms | Allocations: 15535)
 
 
+Started GET "/api/v1/rooms/4" for ::1 at 2020-03-26 13:18:28 -0700
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RoomsController#show as */*
+  Parameters: {"id"=>"4", "room"=>{}}
+  [1m[36mRoom Load (2.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.28ms)
+[active_model_serializers]   [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.23ms)
+[active_model_serializers]   [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.8ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (169.46ms)
+Completed 200 OK in 213ms (Views: 160.3ms | ActiveRecord: 49.7ms | Allocations: 30285)
+
+
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 13:20:27 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>{"user_id"=>2, "user_name"=>"Anthony"}, "storages"=>[{"id"=>3, "name"=>"Chest of Drawers", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>4, "name"=>"Diary", "category"=>"Other", "quantity"=>0, "description"=>"Personal Dairy.", "photo"=>"nil", "storage"=>{"storage_id"=>3, "storage_name"=>"Chest of Drawers", "storage_size"=>"large", "storage_photo"=>"nil"}}]}, {"id"=>4, "name"=>"Nightstand", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>5, "name"=>"iPad", "category"=>"Electronics", "quantity"=>0, "description"=>"2019 iPad Pro serial number:2N3UOFN083", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>6, "name"=>"Headphones", "category"=>"Electronics", "quantity"=>0, "description"=>"Beats by Dre", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>7, "name"=>"Favorite Pen", "category"=>"Office Supplies", "quantity"=>0, "description"=>"Deluxe uni-ball fine point", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}]}], "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.7ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.24ms)
+[active_model_serializers]   [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+[active_model_serializers]   [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (28.57ms)
+Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 3.3ms | Allocations: 7350)
+
+
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 13:20:47 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>{"user_id"=>2, "user_name"=>"Anthony"}, "storages"=>[{"id"=>3, "name"=>"Chest of Drawers", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>4, "name"=>"Diary", "category"=>"Other", "quantity"=>0, "description"=>"Personal Dairy.", "photo"=>"nil", "storage"=>{"storage_id"=>3, "storage_name"=>"Chest of Drawers", "storage_size"=>"large", "storage_photo"=>"nil"}}]}, {"id"=>4, "name"=>"Nightstand", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>5, "name"=>"iPad", "category"=>"Electronics", "quantity"=>0, "description"=>"2019 iPad Pro serial number:2N3UOFN083", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>6, "name"=>"Headphones", "category"=>"Electronics", "quantity"=>0, "description"=>"Beats by Dre", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>7, "name"=>"Favorite Pen", "category"=>"Office Supplies", "quantity"=>0, "description"=>"Deluxe uni-ball fine point", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}]}], "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (2.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (1.2ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.73ms)
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.46ms)
+[active_model_serializers]   [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (26.45ms)
+Completed 200 OK in 32ms (Views: 21.4ms | ActiveRecord: 9.1ms | Allocations: 7332)
+
+
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:21:48 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>{"user_id"=>2, "user_name"=>"Anthony"}, "storages"=>[{"id"=>3, "name"=>"Chest of Drawers", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>4, "name"=>"Diary", "category"=>"Other", "quantity"=>0, "description"=>"Personal Dairy.", "photo"=>"nil", "storage"=>{"storage_id"=>3, "storage_name"=>"Chest of Drawers", "storage_size"=>"large", "storage_photo"=>"nil"}}]}, {"id"=>4, "name"=>"Nightstand", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>5, "name"=>"iPad", "category"=>"Electronics", "quantity"=>0, "description"=>"2019 iPad Pro serial number:2N3UOFN083", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>6, "name"=>"Headphones", "category"=>"Electronics", "quantity"=>0, "description"=>"Beats by Dre", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>7, "name"=>"Favorite Pen", "category"=>"Office Supplies", "quantity"=>0, "description"=>"Deluxe uni-ball fine point", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}]}], "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (2.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (1.6ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.43ms)
+[active_model_serializers]   [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+[active_model_serializers]   [1m[36mItem Load (2.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.25ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (29.28ms)
+Completed 200 OK in 34ms (Views: 20.9ms | ActiveRecord: 11.2ms | Allocations: 7332)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:22:10 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>{"user_id"=>2, "user_name"=>"Anthony"}, "storages"=>[{"id"=>3, "name"=>"Chest of Drawers", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>4, "name"=>"Diary", "category"=>"Other", "quantity"=>0, "description"=>"Personal Dairy.", "photo"=>"nil", "storage"=>{"storage_id"=>3, "storage_name"=>"Chest of Drawers", "storage_size"=>"large", "storage_photo"=>"nil"}}]}, {"id"=>4, "name"=>"Nightstand", "size"=>"large", "photo"=>"nil", "room"=>{"room_id"=>4, "room_name"=>"Kitchen"}, "items"=>[{"id"=>5, "name"=>"iPad", "category"=>"Electronics", "quantity"=>0, "description"=>"2019 iPad Pro serial number:2N3UOFN083", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>6, "name"=>"Headphones", "category"=>"Electronics", "quantity"=>0, "description"=>"Beats by Dre", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}, {"id"=>7, "name"=>"Favorite Pen", "category"=>"Office Supplies", "quantity"=>0, "description"=>"Deluxe uni-ball fine point", "photo"=>"nil", "storage"=>{"storage_id"=>4, "storage_name"=>"Nightstand", "storage_size"=>"large", "storage_photo"=>"nil"}}]}], "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (1.0ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.55ms)
+[active_model_serializers]   [1m[36mItem Load (4.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.38ms)
+[active_model_serializers]   [1m[36mItem Load (3.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (37.43ms)
+Completed 200 OK in 43ms (Views: 26.2ms | ActiveRecord: 13.3ms | Allocations: 7350)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:23:31 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (2.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (5.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.55ms)
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.47ms)
+[active_model_serializers]   [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (33.81ms)
+Completed 200 OK in 40ms (Views: 25.9ms | ActiveRecord: 11.0ms | Allocations: 7246)
+
+
+Started GET "/api/v1/rooms/4" for ::1 at 2020-03-26 13:23:43 -0700
+Processing by Api::V1::RoomsController#show as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.99ms)
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.51ms)
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.66ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (59.27ms)
+Completed 200 OK in 63ms (Views: 58.0ms | ActiveRecord: 2.7ms | Allocations: 7231)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:24:02 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (1.1ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.94ms)
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (22.42ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 3.1ms | Allocations: 7245)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:31:32 -0700
+  
+SyntaxError (/Users/kailanakahawaii/Development/room_organizer_backend/app/controllers/api/v1/rooms_controller.rb:30: syntax error, unexpected '\n', expecting =>
+/Users/kailanakahawaii/Development/room_organizer_backend/app/controllers/api/v1/rooms_controller.rb:45: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/rooms_controller.rb:30: syntax error, unexpected '\n', expecting =>
+app/controllers/api/v1/rooms_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/rooms_controller.rb:30: syntax error, unexpected '\n', expecting =>
+app/controllers/api/v1/rooms_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:32:15 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.72ms)
+Completed 200 OK in 82ms (Views: 13.4ms | ActiveRecord: 35.2ms | Allocations: 4021)
+
+
+  [1m[36mRoom Load (1.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 13:32:58 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (6.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 6.7ms | Allocations: 715)
+
+
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 13:33:10 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 715)
+
+
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 13:34:04 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 76ms (Views: 10.5ms | ActiveRecord: 86.3ms | Allocations: 3732)
+
+
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 14:23:07 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user"=>"Anthony", "room"=>{"id"=>"4", "name"=>"Kitchen"}}
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.91ms)
+Completed 200 OK in 16ms (Views: 3.7ms | ActiveRecord: 1.6ms | Allocations: 814)
+
+
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 14:24:45 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user_id"=>2, "room"=>{"id"=>"4", "name"=>"Kitchen", "user_id"=>2}}
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.6ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.94ms)
+[active_model_serializers]   [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (115.38ms)
+Completed 200 OK in 134ms (Views: 95.1ms | ActiveRecord: 38.2ms | Allocations: 26444)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 14:25:12 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user_id"=>2, "room"=>{"id"=>"4", "name"=>"Kitchen", "user_id"=>2}}
+  [1m[36mRoom Load (2.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (11.0ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.72ms)
+[active_model_serializers]   [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+[active_model_serializers]   [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.87ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (34.3ms)
+Completed 200 OK in 39ms (Views: 20.6ms | ActiveRecord: 16.7ms | Allocations: 7228)
+
+
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 14:26:25 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user_id"=>2, "room"=>{"id"=>"4", "name"=>"Kitchen", "user_id"=>2}}
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.7ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.96ms)
+[active_model_serializers]   [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+[active_model_serializers]   [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.93ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (23.64ms)
+Completed 200 OK in 28ms (Views: 21.7ms | ActiveRecord: 3.9ms | Allocations: 7228)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 14:26:36 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user_id"=>2, "room"=>{"id"=>"4", "name"=>"Kitchen", "user_id"=>2}}
+  [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/room_serializer.rb:5:in `user'
+[active_model_serializers]   [1m[36mStorage Load (0.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+[active_model_serializers]   [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+[active_model_serializers]   [1m[36mItem Load (1.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (27.47ms)
+Completed 200 OK in 32ms (Views: 22.7ms | ActiveRecord: 6.7ms | Allocations: 7228)
+
+
+Started PATCH "/api/v1/rooms/4" for ::1 at 2020-03-26 14:29:05 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Kitchen", "user_id"=>2, "room"=>{"id"=>"4", "name"=>"Kitchen", "user_id"=>2}}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+  [1m[36mRoom Update (12.3ms)[0m  [1m[33mUPDATE "rooms" SET "name" = $1, "updated_at" = $2 WHERE "rooms"."id" = $3[0m  [["name", "Kitchen"], ["updated_at", "2020-03-26 21:29:05.472211"], ["id", 4]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers]   [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.09ms)
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.44ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (52.36ms)
+Completed 200 OK in 118ms (Views: 37.7ms | ActiveRecord: 51.2ms | Allocations: 29470)
+
+
+Started PUT "/api/v1/rooms/4" for ::1 at 2020-03-26 14:29:27 -0700
+Processing by Api::V1::RoomsController#update as */*
+  Parameters: {"id"=>"4", "name"=>"Living Room", "user_id"=>2, "room"=>{"id"=>"4", "name"=>"Living Room", "user_id"=>2}}
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+  [1m[36mRoom Update (0.7ms)[0m  [1m[33mUPDATE "rooms" SET "name" = $1, "updated_at" = $2 WHERE "rooms"."id" = $3[0m  [["name", "Living Room"], ["updated_at", "2020-03-26 21:29:27.519192"], ["id", 4]]
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rooms_controller.rb:30:in `update'
+[active_model_serializers]   [1m[36mStorage Load (0.7ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.43ms)
+[active_model_serializers]   [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+[active_model_serializers]   [1m[36mItem Load (1.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/rooms_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+[active_model_serializers] Rendered RoomSerializer with ActiveModelSerializers::Adapter::Attributes (22.02ms)
+Completed 200 OK in 38ms (Views: 19.3ms | ActiveRecord: 6.7ms | Allocations: 9926)
+
+
+Started GET "/api/v1/items/1" for ::1 at 2020-03-26 14:30:43 -0700
+Processing by Api::V1::ItemsController#show as */*
+  Parameters: {"id"=>"1", "name"=>"Living Room", "user_id"=>2, "item"=>{"id"=>"1", "name"=>"Living Room"}}
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/item_serializer.rb:5:in `storage'
+[active_model_serializers] Rendered ItemSerializer with ActiveModelSerializers::Adapter::Attributes (50.15ms)
+Completed 200 OK in 101ms (Views: 48.7ms | ActiveRecord: 17.7ms | Allocations: 12312)
+
+
+Started PATCH "/api/v1/items/1" for ::1 at 2020-03-26 14:31:06 -0700
+Processing by Api::V1::ItemsController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Address Book", "category"=>"Office Supplies", "quantity"=>1, "description"=>"nil", "photo"=>"nil", "item"=>{"id"=>"1", "name"=>"Address Book", "category"=>"Office Supplies", "quantity"=>1, "description"=>"nil", "photo"=>"nil"}}
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+  [1m[36mStorage Load (0.6ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+  [1m[36mItem Update (4.5ms)[0m  [1m[33mUPDATE "items" SET "quantity" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["quantity", 1], ["updated_at", "2020-03-26 21:31:06.935719"], ["id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+[active_model_serializers] Rendered ItemSerializer with ActiveModelSerializers::Adapter::Attributes (0.7ms)
+Completed 200 OK in 47ms (Views: 4.3ms | ActiveRecord: 9.1ms | Allocations: 4374)
+
+
+Started PUT "/api/v1/items/1" for ::1 at 2020-03-26 14:31:24 -0700
+Processing by Api::V1::ItemsController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Address Book", "category"=>"Office Supplies", "quantity"=>2, "description"=>"nil", "photo"=>"nil", "item"=>{"id"=>"1", "name"=>"Address Book", "category"=>"Office Supplies", "quantity"=>2, "description"=>"nil", "photo"=>"nil"}}
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+  [1m[36mStorage Load (0.8ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+  [1m[36mItem Update (0.7ms)[0m  [1m[33mUPDATE "items" SET "quantity" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["quantity", 2], ["updated_at", "2020-03-26 21:31:24.947487"], ["id", 1]]
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/items_controller.rb:30:in `update'
+[active_model_serializers] Rendered ItemSerializer with ActiveModelSerializers::Adapter::Attributes (0.69ms)
+Completed 200 OK in 39ms (Views: 1.5ms | ActiveRecord: 3.7ms | Allocations: 4325)
+
+
+Started GET "/api/v1/storages/2" for ::1 at 2020-03-26 14:31:40 -0700
+Processing by Api::V1::StoragesController#show as */*
+  Parameters: {"id"=>"2", "name"=>"Address Book", "category"=>"Office Supplies", "quantity"=>2, "description"=>"nil", "photo"=>"nil", "storage"=>{"id"=>"2", "photo"=>"nil", "name"=>"Address Book"}}
+  [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/storages_controller.rb:9:in `show'
+[active_model_serializers]   [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/storage_serializer.rb:5:in `room'
+[active_model_serializers]   [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/storages_controller.rb:10:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+[active_model_serializers] Rendered StorageSerializer with ActiveModelSerializers::Adapter::Attributes (26.35ms)
+Completed 200 OK in 32ms (Views: 19.8ms | ActiveRecord: 8.8ms | Allocations: 8571)
+
+
+Started PUT "/api/v1/storages/2" for ::1 at 2020-03-26 14:32:04 -0700
+Processing by Api::V1::StoragesController#update as */*
+  Parameters: {"id"=>"2", "name"=>"Bookshelf", "size"=>"large", "photo"=>"nil", "storage"=>{"id"=>"2", "size"=>"large", "photo"=>"nil", "name"=>"Bookshelf"}}
+  [1m[36mStorage Load (0.6ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/storages_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+  [1m[36mStorage Update (3.2ms)[0m  [1m[33mUPDATE "storages" SET "size" = $1, "updated_at" = $2 WHERE "storages"."id" = $3[0m  [["size", "large"], ["updated_at", "2020-03-26 21:32:04.354161"], ["id", 2]]
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+[active_model_serializers]   [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/storages_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+[active_model_serializers] Rendered StorageSerializer with ActiveModelSerializers::Adapter::Attributes (5.77ms)
+Completed 200 OK in 24ms (Views: 6.0ms | ActiveRecord: 7.5ms | Allocations: 5824)
+
+
+Started PATCH "/api/v1/storages/2" for ::1 at 2020-03-26 14:32:15 -0700
+Processing by Api::V1::StoragesController#update as */*
+  Parameters: {"id"=>"2", "name"=>"Bookshelf", "size"=>"medium", "photo"=>"nil", "storage"=>{"id"=>"2", "size"=>"medium", "photo"=>"nil", "name"=>"Bookshelf"}}
+  [1m[36mStorage Load (1.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/storages_controller.rb:29:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+  [1m[36mStorage Update (6.3ms)[0m  [1m[33mUPDATE "storages" SET "size" = $1, "updated_at" = $2 WHERE "storages"."id" = $3[0m  [["size", "medium"], ["updated_at", "2020-03-26 21:32:15.526429"], ["id", 2]]
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/storages_controller.rb:30:in `update'
+[active_model_serializers]   [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/storages_controller.rb:31:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+[active_model_serializers] Rendered StorageSerializer with ActiveModelSerializers::Adapter::Attributes (6.06ms)
+Completed 200 OK in 37ms (Views: 6.0ms | ActiveRecord: 17.9ms | Allocations: 5717)
+
+
+Started PATCH "/api/v1/users/1" for ::1 at 2020-03-26 14:32:23 -0700
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"1", "name"=>"Bookshelf", "size"=>"medium", "photo"=>"nil", "user"=>{"id"=>"1", "name"=>"Bookshelf"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `update'
+Completed 404 Not Found in 11ms (ActiveRecord: 10.7ms | Allocations: 779)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/api/v1/users_controller.rb:33:in `update'
+Started PATCH "/api/v1/users/2" for ::1 at 2020-03-26 14:32:25 -0700
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"2", "name"=>"Bookshelf", "size"=>"medium", "photo"=>"nil", "user"=>{"id"=>"2", "name"=>"Bookshelf"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `update'
+  [1m[36mUser Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Anthony"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:34:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Bookshelf"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Update (8.4ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "Bookshelf"], ["updated_at", "2020-03-26 21:32:25.151379"], ["id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+[active_model_serializers]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.71ms)
+[active_model_serializers]   [1m[36mStorage Load (0.5ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.82ms)
+[active_model_serializers]   [1m[36mItem Load (1.9ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.1ms)
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+[active_model_serializers]   [1m[36mStorage Load (0.3ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+[active_model_serializers]   [1m[36mStorage Load (0.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.5ms)
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.42ms)
+[active_model_serializers]   [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."storage_id" = $1[0m  [["storage_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.5ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (93.14ms)
+Completed 200 OK in 133ms (Views: 91.2ms | ActiveRecord: 20.2ms | Allocations: 24446)
+
+
+Started PATCH "/api/v1/users/3" for ::1 at 2020-03-26 14:32:40 -0700
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"3", "name"=>"Bookshelf", "size"=>"medium", "photo"=>"nil", "user"=>{"id"=>"3", "name"=>"Bookshelf"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `update'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:34:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Bookshelf"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+[active_model_serializers]   [1m[36mRoom Load (1.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.9ms)
+[active_model_serializers]   [1m[36mStorage Load (1.9ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.74ms)
+Completed 200 OK in 39ms (Views: 10.0ms | ActiveRecord: 8.7ms | Allocations: 8724)
+
+
+Started GET "/api/v1/users/3" for ::1 at 2020-03-26 14:32:49 -0700
+Processing by Api::V1::UsersController#show as */*
+  Parameters: {"id"=>"3", "name"=>"Bookshelf", "size"=>"medium", "photo"=>"nil", "user"=>{"id"=>"3", "name"=>"Bookshelf"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:11:in `show'
+[active_model_serializers]   [1m[36mRoom Load (1.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.97ms)
+[active_model_serializers]   [1m[36mStorage Load (1.4ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:12:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.94ms)
+Completed 200 OK in 19ms (Views: 13.8ms | ActiveRecord: 3.3ms | Allocations: 3912)
+
+
+Started PUT "/api/v1/users/3" for ::1 at 2020-03-26 14:33:08 -0700
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"3", "name"=>"Anna", "user"=>{"id"=>"3", "name"=>"Anna"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `update'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Jack"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:34:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Anna"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "Anna"], ["updated_at", "2020-03-26 21:33:08.514312"], ["id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+[active_model_serializers]   [1m[36mRoom Load (1.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.02ms)
+[active_model_serializers]   [1m[36mStorage Load (0.7ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.06ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (11.83ms)
+Completed 200 OK in 33ms (Views: 11.0ms | ActiveRecord: 8.9ms | Allocations: 8081)
+
+
+Started PATCH "/api/v1/users/3" for ::1 at 2020-03-26 14:33:18 -0700
+Processing by Api::V1::UsersController#update as */*
+  Parameters: {"id"=>"3", "name"=>"Bob", "user"=>{"id"=>"3", "name"=>"Bob"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:33:in `update'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Anna"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:34:in `update'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Exists? (10.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["name", "Bob"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[36mUser Update (4.9ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["name", "Bob"], ["updated_at", "2020-03-26 21:33:18.079566"], ["id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:35:in `update'
+[active_model_serializers]   [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+[active_model_serializers]   [1m[36mStorage Load (0.8ms)[0m  [1m[34mSELECT "storages".* FROM "storages" WHERE "storages"."room_id" = $1[0m  [["room_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:36:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.28ms)
+Completed 200 OK in 61ms (Views: 11.9ms | ActiveRecord: 21.8ms | Allocations: 8083)
+
+

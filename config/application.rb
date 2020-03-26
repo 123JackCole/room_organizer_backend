@@ -38,7 +38,7 @@ module RoomOrganizer
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', headers: :any, methods: [:get, :post, :delete]
+        resource '*', headers: :any, methods: [:get, :post, :delete, :put, :patch]
       end
     end
 
