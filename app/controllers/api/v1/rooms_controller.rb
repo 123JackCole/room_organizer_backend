@@ -22,13 +22,16 @@ class Api::V1::RoomsController < ApplicationController
 
     def edit
         room = Room.find(params[:id])
+        render json: room
     end
 
     def update
         room = Room.find(params[:id])
+        render json: room
     end
 
     def destroy
+        room = Room.find(params[:id])
         room.destroy
         render json: {message: "Room successfully deleted"}
     end
