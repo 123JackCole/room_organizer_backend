@@ -27,7 +27,8 @@ class Api::V1::StoragesController < ApplicationController
 
     def update
         storage = Storage.find(params[:id])
-        render json: storage 
+        storage.update(storage_params)
+        render json: storage
     end
 
     def destroy
